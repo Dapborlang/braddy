@@ -8,6 +8,6 @@ class BillDetail extends Model
 {
     public function Bill()
     {
-       return $this->belongsTo('App\Bill');
+       return $this->belongsTo('App\Bill',"bill_id");
     }
 }

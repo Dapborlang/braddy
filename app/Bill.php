@@ -10,4 +10,10 @@ class Bill extends Model
     {
        return $this->belongsTo('App\TaxType','tax_type','code');
     }
+
+    public function billDetail()
+    {
+       return $this->hasMany('App\BillDetail');
+    }
+    
 }
