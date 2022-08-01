@@ -17,6 +17,8 @@ class CreateBillsTable extends Migration
             $table->bigIncrements('id');
             $table->string('bill_no');
             $table->date('bill_date');
+            $table->string('order_no');
+            $table->date('order_date');
             $table->string('subject');
             $table->string('tax_type');
             $table->timestamps();
