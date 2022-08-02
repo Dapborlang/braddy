@@ -125,7 +125,7 @@
 		    	<td style="text-align: right; font-size: 15px; font-weight: bold;">{{$figure->format(array_sum($total))}}</td>
 		    </tr>
 		    <tr>
-		    	<td colspan="5" style="text-align: center; font-size: 15px; font-weight: bold;">(Rupees {{ucwords($words->format(array_sum($total)))}}) only.</td>
+		    	<td colspan="5" style="text-align: center; font-size: 15px; font-weight: bold;">Rupees {{ucwords($words->format(array_sum($total)))}} only.</td>
 		    </tr>
 		</tfoot>
 	</table>
