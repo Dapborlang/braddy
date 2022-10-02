@@ -18,3 +18,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/finalize/{id}/{sid}', 'PrintController@print')->name('print');
+Route::get('/print/{id}/{sid}', 'PrintController@print')->name('printget');

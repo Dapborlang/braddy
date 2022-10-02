@@ -78,16 +78,21 @@
             @foreach(Auth::user()->formRole as $item)
                 <div class="list-group list-group-flush">
                 @foreach($item->link as $item1)
-                    <div class="dropdown list-group-item list-group-item-primary" style="padding-left:5px; padding-top:1px; padding-bottom:1px; padding-right:0px">
-                        <a href="#" class="btn btn-info btn-block dropdown-toggle"  data-toggle="dropdown">
-                            {{$item1->header}}
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ url('/') }}/formgen/create/{{$item1->id}}">Create</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ url('/') }}/formgen/{{$item1->id}}">View/Edit</a>
+                @php
+                    $attribute=json_decode($item1->attribute, true);
+                @endphp
+                    @if(isset($attribute['sidebar']) && $attribute['sidebar'])
+                        <div class="dropdown list-group-item list-group-item-primary" style="padding-left:5px; padding-top:1px; padding-bottom:1px; padding-right:0px">
+                            <a href="#" class="btn btn-info btn-block dropdown-toggle"  data-toggle="dropdown">
+                                {{$item1->header}}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ url('/') }}/formgen/create/{{$item1->id}}">Create</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ url('/') }}/formgen/{{$item1->id}}">View/Edit</a>
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
                 </div>
             @endforeach

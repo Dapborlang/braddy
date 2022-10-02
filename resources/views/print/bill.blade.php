@@ -80,12 +80,12 @@
                     <td style="text-align: center;">{{$item->quantity}}</td>
                     <td style="text-align: center;">{{$item->gst}}</td>
                     <td style="text-align: right;">
-						{{$figure->format($item->rate * ($item->gst/100))}}
-						@php $gst[]=round($item->rate * ($item->gst/100)) @endphp
+						{{$figure->format($item->rate * ($item->gst/100)*$item->quantity)}}
+						@php $gst[]=($item->rate * ($item->gst/100)*$item->quantity) @endphp
 					</td>
                     <td style="text-align: right;">
-					{{$figure->format(($item->rate * $item->quantity)+($item->rate * ($item->gst/100)))}} 
-					@php $total[]=($item->rate * $item->quantity)+($item->rate * ($item->gst/100)) @endphp
+					{{$figure->format(($item->rate * $item->quantity)+($item->rate * ($item->gst/100*$item->quantity)))}} 
+					@php $total[]=($item->rate * $item->quantity)+($item->rate * ($item->gst/100*$item->quantity)) @endphp
 				</td>
                 </tr>
             @endforeach
@@ -121,11 +121,11 @@
 		    	<td style="text-align: right; font-size: 15px; font-weight: bold;">{{$figure->format(array_sum($gst)/2)}}</td>
 		    </tr>
 		    <tr>
-		    	<td colspan="4" style="text-align: right; font-size: 15px; font-weight: bold;">Total</td>
-		    	<td style="text-align: right; font-size: 15px; font-weight: bold;">{{$figure->format(array_sum($total))}}</td>
+		    	<td colspan="4" style="text-align: right; font-size: 15px; font-weight: bold;">@if(array_sum($total)!=round(array_sum($total)))Total(Rounded)@else Total @endif</td>
+		    	<td style="text-align: right; font-size: 15px; font-weight: bold;">{{$figure->format(round(array_sum($total)))}}</td>
 		    </tr>
 		    <tr>
-		    	<td colspan="5" style="text-align: center; font-size: 15px; font-weight: bold;">Rupees {{ucwords($words->format(array_sum($total)))}} only.</td>
+		    	<td colspan="5" style="text-align: center; font-size: 15px; font-weight: bold;">Rupees {{ucwords($words->format(round(array_sum($total))))}} only.</td>
 		    </tr>
 		</tfoot>
 	</table>

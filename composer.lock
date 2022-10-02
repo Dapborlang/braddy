@@ -1613,12 +1613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dapborlang/formbuilder.git",
-                "reference": "e8dc24b31c0bde4e81806385fa46175a39227a91"
+                "reference": "fd311b71d40237085e56696f796de169c6be2c07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dapborlang/formbuilder/zipball/e8dc24b31c0bde4e81806385fa46175a39227a91",
-                "reference": "e8dc24b31c0bde4e81806385fa46175a39227a91",
+                "url": "https://api.github.com/repos/Dapborlang/formbuilder/zipball/fd311b71d40237085e56696f796de169c6be2c07",
+                "reference": "fd311b71d40237085e56696f796de169c6be2c07",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1650,7 +1650,7 @@
                 "issues": "https://github.com/Dapborlang/formbuilder/issues",
                 "source": "https://github.com/Dapborlang/formbuilder/tree/main"
             },
-            "time": "2022-05-12T17:12:47+00:00"
+            "time": "2022-10-02T16:30:32+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
